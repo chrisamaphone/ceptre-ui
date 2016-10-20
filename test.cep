@@ -1,0 +1,53 @@
+
+nat : type.
+z : nat.
+s nat : nat.
+
+#builtin NAT nat.
+#builtin NAT_ZERO z.
+#builtin NAT_SUCC s.
+
+entity : type.
+floor : entity.
+rat : entity.
+skelly : entity.
+chest : entity.
+door : entity.
+upstair : entity.
+downstair : entity.
+
+in_play entity : bwd.
+in_play floor.
+in_play rat.
+in_play skelly.
+in_play chest.
+in_play door.
+in_play upstair.
+in_play downstair.
+
+at nat nat entity : pred.
+
+make_rows nat : pred.
+make_cols nat : pred.
+on_row nat : pred.
+on_col nat : pred.
+
+context init =
+{ make_cols 4, make_rows 4}.
+
+stage generate = {
+
+start_rows : make_rows R * $make_cols C -o on_row R * on_col C.
+
+make_tile : in_play E * on_col (s X) * on_row (s Y)
+              -o at X Y E * on_col X * on_row (s Y).
+
+new_row   : on_row (s Y) * on_col 0 * $make_cols C
+              -o on_row Y * on_col C.
+
+done : on_col _ * on_row z * make_cols _ -o ().
+
+}
+
+#trace _ generate init.
+

@@ -1,0 +1,73 @@
+JSON format for ceptre transitions:
+
+term: {id:string, args:term array}
+resource: {varname:string, type:{pred:string, args:term array}}
+molecule: resource array,
+
+{ command: {rulename: string, args: term array},
+  removed: resource array,
+  added:   resource array,
+  context: resource array
+}
+
+
+Example:
+(interrupt chair carol contrarian 4 alice)
+let [x49, x48, x47, x46, x45, x44, x43, x42, x41] = interrupt chair carol
+contrarian 4 alice [x39, [x32, [x25, [(interruptive []), [x40, [x35, [x38,
+[]]]]]]]];
+---- {(turns 4), (feels alice miffed), (is_speaking carol), (is_interrupted
+alice), (interrupts carol alice), (listening alice carol), (listening carol
+alice), (is carol contrarian), (germaine chair), (listening bob carol),
+(listening carol bob), (listening alice bob), (listening bob alice), (is
+bob people_pleaser), (is alice participant), (feels carol content), (feels
+alice content), (feels bob content), (observable table blue), (observable
+chair red), (thinks carol (opinion (person bob) positive)), (thinks carol
+(opinion (person alice) positive)), (thinks bob (opinion (person carol)
+positive)), (thinks bob (opinion (person alice) positive)), (thinks alice
+(opinion (person carol) negative)), (thinks alice (opinion (person bob)
+positive)), (thinks carol (fact table blue)), (thinks carol (opinion table
+negative)), (thinks bob (fact table blue)), (thinks bob (opinion table
+neutral)), (thinks alice (fact table blue)), (thinks alice (opinion table
+negative)), (thinks carol (fact chair red)), (thinks carol (opinion chair
+positive)), (thinks bob (fact chair red)), (thinks bob (opinion chair
+positive)), (thinks alice (fact chair red)), (thinks alice (opinion chair
+negative)), (relevant table chair), (relevant chair table), (available
+table), (stage main)}
+
+{ command: 
+    { rulename: "interrupt",
+      args:["chair", "carol", "contrarian", "4", "alice"]
+    },
+  removed:
+    [ {varname:"x39", ...},
+      {varname:"x32", ...},
+      {varname:"x25", ...},
+      {varname:"x40", ...},
+      {varname:"x35", ...},
+      {varname:"x38", ...}
+    ],
+  added: 
+    [ {varname:"x49", type:{pred:XXX, args:[XXX]}},
+      {varname:"x48",  type:{pred:XXX, args:[XXX]}},
+      {varname:"x47",  type:{pred:XXX, args:[XXX]}},
+      {varname:"x46",  type:{pred:XXX, args:[XXX]}},
+      {varname:"x45",  type:{pred:XXX, args:[XXX]}},
+      {varname:"x44",  type:{pred:XXX, args:[XXX]}},
+      {varname:"x43",  type:{pred:XXX, args:[XXX]}},
+      {varname:"x42",  type:{pred:XXX, args:[XXX]}},
+      {varname:"x41",  type:{pred:XXX, args:[XXX]}} ],
+  context : [ ... ] 
+}
+
+-- In progress
+
+Example: log.txt line
+Applying transition (make_tile chest 1 0)
+---- {(on_row 1), (on_col 1), (at 1 0 chest), (at 2 0 chest), (at 3 0
+upstair), (make_cols 4), (at 0 1 door), (at 1 1 chest), (at 2 1 rat), (at 3
+1 skelly), (at 0 2 door), (at 1 2 downstair), (at 2 2 skelly), (at 3 2
+rat), (at 0 3 floor), (at 1 3 skelly), (at 2 3 door), (at 3 3 downstair),
+(stage generate)}
+
+
