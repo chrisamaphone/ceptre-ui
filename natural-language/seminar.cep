@@ -282,6 +282,6 @@ finish_speaking_with_fact :
 
     }
 
-%#interactive main.
+#interactive main.
 
 #trace _ main init.
