@@ -1,0 +1,26 @@
+{
+  "name": "ceptre-ui",
+  "version": "1.0.0",
+  "description": "\"webserver comm with ceptre\"",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "filewatcher": "^3.0.1",
+    "fs": "0.0.1-security",
+    "http": "0.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisamaphone/ceptre-ui.git"
+  },
+  "author": "Chris Martens",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrisamaphone/ceptre-ui/issues"
+  },
+  "homepage": "https://github.com/chrisamaphone/ceptre-ui#readme"
+}
