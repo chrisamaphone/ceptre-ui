@@ -1,0 +1,17 @@
+digraph {
+x4 [style=filled,fillcolor=skyblue,label="(p b)"];
+x3 [style=filled,fillcolor=skyblue,label="(p a)"];
+x2 [style=filled,fillcolor=skyblue,label="(p b)"];
+x1 [style=filled,fillcolor=skyblue,label="(p a)"];
+x0 [style=filled,fillcolor=skyblue,label="(stage main)"];
+t0 [shape=box,style=filled,fillcolor=green,label="combine\na b"];
+x5 [style=filled,fillcolor=skyblue,label="(q a b)"];
+x3 -> t0;
+x2 -> t0;
+t0 -> x5;
+t1 [shape=box,style=filled,fillcolor=green,label="combine\nb a"];
+x6 [style=filled,fillcolor=skyblue,label="(q b a)"];
+x4 -> t1;
+x1 -> t1;
+t1 -> x6;
+}

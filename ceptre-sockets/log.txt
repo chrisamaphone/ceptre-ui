@@ -1,0 +1,6 @@
+--- STEP:    combine a b
+    REMOVED: {(p a), (p b)}
+    ADDED:   {(q a b)}
+--- STEP:    combine b a
+    REMOVED: {(p b), (p a)}
+    ADDED:   {(q b a)}

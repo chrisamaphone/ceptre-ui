@@ -1,0 +1,17 @@
+foo : type.
+a : foo.
+b : foo.
+
+p foo : pred.
+q foo foo : pred.
+
+stage main = {
+  combine : p X * p Y -o q X Y.
+}
+
+context init =
+{ p a, p b, p a, p b }.
+
+#trace _ main init.
+
+
