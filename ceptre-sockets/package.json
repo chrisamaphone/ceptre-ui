@@ -1,9 +1,12 @@
 {
-  "name": "Ceptre Interface with Sockets",
-  "version": "0.0.1",
-  "description": "front-end for Ceptre using web sockets",
-  "dependencies": {
-    "express": "^4.10.2",
-    "socket.io": "^1.7.1"
-  }
+  "name": "ceptre-sockets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
 }

@@ -19,17 +19,20 @@ server.listen(port, function() {
 
 // File reading and communication with client
 
-watcher.add('./ceptre.json');
+var ceptre_file = './ceptre.json';
+watcher.add(ceptre_file);
 
 
 io.on('connection', function(socket){
   console.log('connected');
   watcher.on('change', function(file, stat) {
+    watcher.remove(ceptre_file);
     console.log('file changed');
     fs.readFile(file, 'utf8', function(err, data) {
       console.log('Contents: %s', data);
       io.emit('file contents', data);
     });
+    watcher.add(ceptre_file);
   });
 });
 

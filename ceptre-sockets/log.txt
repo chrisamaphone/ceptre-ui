@@ -1,6 +1,12 @@
---- STEP:    combine a b
-    REMOVED: {(p a), (p b)}
-    ADDED:   {(q a b)}
---- STEP:    combine b a
-    REMOVED: {(p b), (p a)}
-    ADDED:   {(q b a)}
+--- STEP:    initiate chair alice
+    REMOVED: {(leader alice), (available chair)}
+    ADDED:   {(is_speaking alice), (germaine chair)}
+--- STEP:    change_topic 9 bob table neutral chair
+    REMOVED: {(germaine chair), (turns 10), (thinks bob (opinion table neutral)), (available table)}
+    ADDED:   {(turns 9), (germaine table), (thinks bob (opinion table neutral))}
+--- STEP:    finish_speaking_with_fact table alice blue bob 8
+    REMOVED: {(turns 9), (germaine table), (is_speaking alice), (listening alice bob), (listening bob alice), (thinks alice (fact table blue))}
+    ADDED:   {(turns 8), (hears bob alice (fact table blue)), (says alice (fact table blue)), (finished_speaking alice), (listening bob alice), (listening alice bob), (thinks alice (fact table blue)), (germaine table)}
+--- STEP:    begin_speaking_with_opinion table carol alice negative contrarian 7
+    REMOVED: {(turns 8), (finished_speaking alice), (germaine table), (listening alice carol), (listening carol alice), (is carol contrarian), (thinks carol (opinion table negative))}
+    ADDED:   {(turns 7), (hears alice carol (opinion table negative)), (is_speaking carol), (is carol contrarian), (thinks carol (opinion table negative)), (listening alice carol), (listening carol alice), (germaine table)}
