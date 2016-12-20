@@ -8,15 +8,27 @@ function render_nl(transition) {
   return dialogue;
 }
 
+function process_transition(t) {
+  // XXX TODO
+}
+
+function render_map(canvas, transition) {
+    process_transition(transition);
+    draw(canvas);
+}
+
 function main() {
   var ws = io.connect();
+
   ws.on('file contents', function(data) {
     console.log(data);
     var t = JSON.parse(data);
-    transition = t;
+    /*
     var rendered = render_nl(t);
     $('#trace').append("<pre>"+rendered+"</pre>"); 
-    // document.getElementById('trace').innerHTML = "salfkjs"
+    */
+    var canvas = document.getElementById('map');
+    render_map(canvas, t);
   });
 }
 
