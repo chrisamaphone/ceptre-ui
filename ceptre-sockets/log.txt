@@ -1,12 +1,207 @@
---- STEP:    initiate chair alice
-    REMOVED: {(leader alice), (available chair)}
-    ADDED:   {(is_speaking alice), (germaine chair)}
---- STEP:    change_topic 9 bob table neutral chair
-    REMOVED: {(germaine chair), (turns 10), (thinks bob (opinion table neutral)), (available table)}
-    ADDED:   {(turns 9), (germaine table), (thinks bob (opinion table neutral))}
---- STEP:    finish_speaking_with_fact table alice blue bob 8
-    REMOVED: {(turns 9), (germaine table), (is_speaking alice), (listening alice bob), (listening bob alice), (thinks alice (fact table blue))}
-    ADDED:   {(turns 8), (hears bob alice (fact table blue)), (says alice (fact table blue)), (finished_speaking alice), (listening bob alice), (listening alice bob), (thinks alice (fact table blue)), (germaine table)}
---- STEP:    begin_speaking_with_opinion table carol alice negative contrarian 7
-    REMOVED: {(turns 8), (finished_speaking alice), (germaine table), (listening alice carol), (listening carol alice), (is carol contrarian), (thinks carol (opinion table negative))}
-    ADDED:   {(turns 7), (hears alice carol (opinion table negative)), (is_speaking carol), (is carol contrarian), (thinks carol (opinion table negative)), (listening alice carol), (listening carol alice), (germaine table)}
+--- STEP:    start_rows 5 5
+    REMOVED: {(make_rows 5), (make_cols 5)}
+    ADDED:   {(on_col 5), (on_row 5), (make_cols 5)}
+--- STEP:    make_tile dagger 4 4
+    REMOVED: {(on_col 5), (on_row 5)}
+    ADDED:   {(on_row 5), (on_col 4), (at 4 4 dagger)}
+--- STEP:    make_tile heart 3 4
+    REMOVED: {(on_row 5), (on_col 4)}
+    ADDED:   {(on_row 5), (on_col 3), (at 3 4 heart)}
+--- STEP:    make_tile floor 2 4
+    REMOVED: {(on_row 5), (on_col 3)}
+    ADDED:   {(on_row 5), (on_col 2), (at 2 4 floor)}
+--- STEP:    make_tile floor 1 4
+    REMOVED: {(on_row 5), (on_col 2)}
+    ADDED:   {(on_row 5), (on_col 1), (at 1 4 floor)}
+--- STEP:    make_tile dagger 0 4
+    REMOVED: {(on_row 5), (on_col 1)}
+    ADDED:   {(on_row 5), (on_col 0), (at 0 4 dagger)}
+--- STEP:    new_row 4 5
+    REMOVED: {(on_row 5), (on_col 0), (make_cols 5)}
+    ADDED:   {(on_col 5), (on_row 4), (make_cols 5)}
+--- STEP:    make_tile heart 4 3
+    REMOVED: {(on_col 5), (on_row 4)}
+    ADDED:   {(on_row 4), (on_col 4), (at 4 3 heart)}
+--- STEP:    make_tile heart 3 3
+    REMOVED: {(on_row 4), (on_col 4)}
+    ADDED:   {(on_row 4), (on_col 3), (at 3 3 heart)}
+--- STEP:    make_tile heart 2 3
+    REMOVED: {(on_row 4), (on_col 3)}
+    ADDED:   {(on_row 4), (on_col 2), (at 2 3 heart)}
+--- STEP:    make_tile wall 1 3
+    REMOVED: {(on_row 4), (on_col 2)}
+    ADDED:   {(on_row 4), (on_col 1), (at 1 3 wall)}
+--- STEP:    make_tile heart 0 3
+    REMOVED: {(on_row 4), (on_col 1)}
+    ADDED:   {(on_row 4), (on_col 0), (at 0 3 heart)}
+--- STEP:    new_row 3 5
+    REMOVED: {(on_row 4), (on_col 0), (make_cols 5)}
+    ADDED:   {(on_col 5), (on_row 3), (make_cols 5)}
+--- STEP:    make_tile heart 4 2
+    REMOVED: {(on_col 5), (on_row 3)}
+    ADDED:   {(on_row 3), (on_col 4), (at 4 2 heart)}
+--- STEP:    make_tile heart 3 2
+    REMOVED: {(on_row 3), (on_col 4)}
+    ADDED:   {(on_row 3), (on_col 3), (at 3 2 heart)}
+--- STEP:    make_tile wall 2 2
+    REMOVED: {(on_row 3), (on_col 3)}
+    ADDED:   {(on_row 3), (on_col 2), (at 2 2 wall)}
+--- STEP:    make_tile heart 1 2
+    REMOVED: {(on_row 3), (on_col 2)}
+    ADDED:   {(on_row 3), (on_col 1), (at 1 2 heart)}
+--- STEP:    make_tile heart 0 2
+    REMOVED: {(on_row 3), (on_col 1)}
+    ADDED:   {(on_row 3), (on_col 0), (at 0 2 heart)}
+--- STEP:    new_row 2 5
+    REMOVED: {(on_row 3), (on_col 0), (make_cols 5)}
+    ADDED:   {(on_col 5), (on_row 2), (make_cols 5)}
+--- STEP:    make_tile floor 4 1
+    REMOVED: {(on_col 5), (on_row 2)}
+    ADDED:   {(on_row 2), (on_col 4), (at 4 1 floor)}
+--- STEP:    make_tile floor 3 1
+    REMOVED: {(on_row 2), (on_col 4)}
+    ADDED:   {(on_row 2), (on_col 3), (at 3 1 floor)}
+--- STEP:    make_tile floor 2 1
+    REMOVED: {(on_row 2), (on_col 3)}
+    ADDED:   {(on_row 2), (on_col 2), (at 2 1 floor)}
+--- STEP:    make_tile dagger 1 1
+    REMOVED: {(on_row 2), (on_col 2)}
+    ADDED:   {(on_row 2), (on_col 1), (at 1 1 dagger)}
+--- STEP:    make_tile heart 0 1
+    REMOVED: {(on_row 2), (on_col 1)}
+    ADDED:   {(on_row 2), (on_col 0), (at 0 1 heart)}
+--- STEP:    new_row 1 5
+    REMOVED: {(on_row 2), (on_col 0), (make_cols 5)}
+    ADDED:   {(on_col 5), (on_row 1), (make_cols 5)}
+--- STEP:    make_tile heart 4 0
+    REMOVED: {(on_col 5), (on_row 1)}
+    ADDED:   {(on_row 1), (on_col 4), (at 4 0 heart)}
+--- STEP:    make_tile heart 3 0
+    REMOVED: {(on_row 1), (on_col 4)}
+    ADDED:   {(on_row 1), (on_col 3), (at 3 0 heart)}
+--- STEP:    make_tile dagger 2 0
+    REMOVED: {(on_row 1), (on_col 3)}
+    ADDED:   {(on_row 1), (on_col 2), (at 2 0 dagger)}
+--- STEP:    make_tile wall 1 0
+    REMOVED: {(on_row 1), (on_col 2)}
+    ADDED:   {(on_row 1), (on_col 1), (at 1 0 wall)}
+--- STEP:    make_tile wall 0 0
+    REMOVED: {(on_row 1), (on_col 1)}
+    ADDED:   {(on_row 1), (on_col 0), (at 0 0 wall)}
+--- STEP:    new_row 0 5
+    REMOVED: {(on_row 1), (on_col 0), (make_cols 5)}
+    ADDED:   {(on_col 5), (on_row 0), (make_cols 5)}
+--- STEP:    done 5 5
+    REMOVED: {(on_col 5), (on_row 0), (make_cols 5)}
+    ADDED:   {(at 0 0 cat)}
+--- STEP:    `anon10 
+    REMOVED: {qui, (stage generate)}
+    ADDED:   {(stage play)}
+--- STEP:    move 0 0 1 0
+    REMOVED: {(at 0 0 cat)}
+    ADDED:   {(at 1 0 cat)}
+--- STEP:    move 1 0 2 0
+    REMOVED: {(at 1 0 cat)}
+    ADDED:   {(at 2 0 cat)}
+--- STEP:    move 2 0 3 0
+    REMOVED: {(at 2 0 cat)}
+    ADDED:   {(at 3 0 cat)}
+--- STEP:    move 3 0 4 0
+    REMOVED: {(at 3 0 cat)}
+    ADDED:   {(at 4 0 cat)}
+--- STEP:    move 4 0 4 1
+    REMOVED: {(at 4 0 cat)}
+    ADDED:   {(at 4 1 cat)}
+--- STEP:    move 4 1 3 1
+    REMOVED: {(at 4 1 cat)}
+    ADDED:   {(at 3 1 cat)}
+--- STEP:    move 3 1 3 2
+    REMOVED: {(at 3 1 cat)}
+    ADDED:   {(at 3 2 cat)}
+--- STEP:    move 3 2 3 3
+    REMOVED: {(at 3 2 cat)}
+    ADDED:   {(at 3 3 cat)}
+--- STEP:    move 3 3 4 3
+    REMOVED: {(at 3 3 cat)}
+    ADDED:   {(at 4 3 cat)}
+--- STEP:    move 4 3 4 4
+    REMOVED: {(at 4 3 cat)}
+    ADDED:   {(at 4 4 cat)}
+--- STEP:    move 4 4 3 4
+    REMOVED: {(at 4 4 cat)}
+    ADDED:   {(at 3 4 cat)}
+--- STEP:    move 3 4 4 4
+    REMOVED: {(at 3 4 cat)}
+    ADDED:   {(at 4 4 cat)}
+--- STEP:    move 4 4 3 4
+    REMOVED: {(at 4 4 cat)}
+    ADDED:   {(at 3 4 cat)}
+--- STEP:    move 3 4 2 4
+    REMOVED: {(at 3 4 cat)}
+    ADDED:   {(at 2 4 cat)}
+--- STEP:    move 2 4 1 4
+    REMOVED: {(at 2 4 cat)}
+    ADDED:   {(at 1 4 cat)}
+--- STEP:    move 1 4 0 4
+    REMOVED: {(at 1 4 cat)}
+    ADDED:   {(at 0 4 cat)}
+--- STEP:    move 0 4 0 3
+    REMOVED: {(at 0 4 cat)}
+    ADDED:   {(at 0 3 cat)}
+--- STEP:    move 0 3 0 4
+    REMOVED: {(at 0 3 cat)}
+    ADDED:   {(at 0 4 cat)}
+--- STEP:    move 0 4 1 4
+    REMOVED: {(at 0 4 cat)}
+    ADDED:   {(at 1 4 cat)}
+--- STEP:    move 1 4 0 4
+    REMOVED: {(at 1 4 cat)}
+    ADDED:   {(at 0 4 cat)}
+--- STEP:    move 0 4 0 3
+    REMOVED: {(at 0 4 cat)}
+    ADDED:   {(at 0 3 cat)}
+--- STEP:    move 0 3 0 4
+    REMOVED: {(at 0 3 cat)}
+    ADDED:   {(at 0 4 cat)}
+--- STEP:    move 0 4 0 3
+    REMOVED: {(at 0 4 cat)}
+    ADDED:   {(at 0 3 cat)}
+--- STEP:    move 0 3 0 4
+    REMOVED: {(at 0 3 cat)}
+    ADDED:   {(at 0 4 cat)}
+--- STEP:    move 0 4 0 3
+    REMOVED: {(at 0 4 cat)}
+    ADDED:   {(at 0 3 cat)}
+--- STEP:    move 0 3 0 2
+    REMOVED: {(at 0 3 cat)}
+    ADDED:   {(at 0 2 cat)}
+--- STEP:    move 0 2 0 1
+    REMOVED: {(at 0 2 cat)}
+    ADDED:   {(at 0 1 cat)}
+--- STEP:    move 0 1 0 0
+    REMOVED: {(at 0 1 cat)}
+    ADDED:   {(at 0 0 cat)}
+--- STEP:    move 0 0 1 0
+    REMOVED: {(at 0 0 cat)}
+    ADDED:   {(at 1 0 cat)}
+--- STEP:    move 1 0 2 0
+    REMOVED: {(at 1 0 cat)}
+    ADDED:   {(at 2 0 cat)}
+--- STEP:    move 2 0 3 0
+    REMOVED: {(at 2 0 cat)}
+    ADDED:   {(at 3 0 cat)}
+--- STEP:    move 3 0 4 0
+    REMOVED: {(at 3 0 cat)}
+    ADDED:   {(at 4 0 cat)}
+--- STEP:    move 4 0 4 1
+    REMOVED: {(at 4 0 cat)}
+    ADDED:   {(at 4 1 cat)}
+--- STEP:    move 4 1 3 1
+    REMOVED: {(at 4 1 cat)}
+    ADDED:   {(at 3 1 cat)}
+--- STEP:    move 3 1 3 2
+    REMOVED: {(at 3 1 cat)}
+    ADDED:   {(at 3 2 cat)}
+--- STEP:    move 3 2 3 3
+    REMOVED: {(at 3 2 cat)}
+    ADDED:   {(at 3 3 cat)}
